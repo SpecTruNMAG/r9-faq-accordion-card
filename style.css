@@ -16,18 +16,15 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-size: 62.5%;
   font-family: "Kumbh Sans", sans-serif;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  background: linear-gradient(var(--background-gradient-first),var(--background-gradient-second));
-  
+  background-color: var(--background-gradient-first);
+  height: 100vh;
 }
 
 .main {
@@ -37,29 +34,39 @@ body {
   align-items: center;
 }
 
-.card-image-1{
-  width: 24rem;
-  position: relative;
-  top: 210px;
-  left: 60px;
+.card {
+  margin-top: 15rem;
 }
+
+.card-image {
+  position: relative;
+}
+
+.card-image-1 {
+  position: absolute;
+  top: -9rem;
+  left: 6rem;
+  width: 65%;
+}
+
 .card-image-2 {
-  width: 24rem;
-  position: relative;
-  top: 130px;
-  right: -60px;
-
+  position: absolute;
+  left: 6rem;
+  top: 2rem;
 }
 
-
+.card-image-3 {
+  display: none;
+}
 
 .card-text {
-  background-color: whitesmoke;
+  background-color: white;
   margin: 2.4rem;
   border-radius: 2rem;
   padding: 10rem 2.4rem 5rem 2.4rem;
   width: 32.7rem;
 }
+
 .card-title {
   text-align: center;
   font-size: 3rem;
@@ -73,81 +80,91 @@ body {
   text-align: left;
   color: var(--primary-text-first);
   font-weight: 400;
-  list-style: none;  
-	cursor: pointer;
+  list-style: none;
+  cursor: pointer;
   background-image: url("./images/icon-arrow-down.svg");
   background-repeat: no-repeat;
   background-position: right center;
 }
-	.card-details[open] .card-summary{
+
+.card-details[open] .card-summary {
   font-weight: 700;
   background-image: url("./images/icon-arrow-up.svg");
   background-repeat: no-repeat;
   background-position: right center;
-
 }
-.card-summary:active{
+
+.card-summary:active {
   font-weight: 700;
   color: var(--primary-text-second);
-  
 }
+
 .card-description {
   padding-bottom: 1.6rem;
   font-size: 1.2rem;
   color: var(--neutral-text-second);
 }
+
 .card-line {
   border: 0.1rem solid var(--dividers);
 }
 
-
 @media screen and (min-width: 1440px) {
-  html{
+  html {
     font-size: 65%;
   }
-  body {
-      height: 100vh;
-      display: flex;
-      padding-top: 200px;
-  }
-  .card{
-    
+
+  .card {
     width: 920px;
     display: flex;
     flex-direction: row;
-    background-color: whitesmoke;
-   border-radius: 2rem;
-
+    background-color: white;
+    border-radius: 2rem;
   }
-  .card-image, .card-text{
+
+  .card-image,
+  .card-text {
     width: 50%;
     padding-top: 1.6rem;
   }
-  .card-image{
+
+  .card-image {
     position: relative;
   }
 
-  .card-image-1, .card-image-2{
+  .card-image-1,
+  .card-image-2,
+  .card-image-3 {
     position: absolute;
-    top:20px;
-    left: -30px;
-    width: 450px;
-    
+    width: 100%;
   }
-  .card-image-2{
-    top: 250px;
+
+  .card-image-1 {
+    z-index: 2;
+    content: url("./images/illustration-woman-online-desktop.svg");
+    top: 70px;
+    left: -60px;
   }
- 
-  .card-image-one, .card-image-two{
-       width: 100%;
-       object-fit: contain;
-    
+
+  .card-image-2 {
+    z-index: 1;
+    content: url("./images/bg-pattern-desktop.svg");
+    top: -250px;
+    left: -480px;
+    width: 200%;
   }
-  
-  .card-title{
+
+  .card-image-3 {
+    z-index: 3;
+    top: 180px;
+    right: 335px;
+    display: block;
+    width: 190px;
+  }
+
+  .card-title {
     text-align: left;
     padding-left: 0;
   }
-  
- 
+
 }
